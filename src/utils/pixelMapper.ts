@@ -28,7 +28,7 @@ export function reprojectRaster({
       const targetIndex = (y * targetWidth + x) * 4;
       
       // Get [lon, lat] for current target pixel
-      const coords = projection.invert([x, y]);
+      const coords = projection.invert?.([x, y]);
       
       if (coords) {
         const [lon, lat] = coords;

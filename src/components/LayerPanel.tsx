@@ -51,14 +51,14 @@ const TreeNode: React.FC<{
             <input
               autoFocus
               className="bg-blue-500/20 text-white text-xs border-none outline-none rounded px-1 w-full"
-              defaultValue={item.name || item.id}
+              defaultValue={("name" in item && item.name) || item.id}
               onKeyDown={handleNameChange}
               onBlur={() => setIsEditingName(false)}
               onClick={(e) => e.stopPropagation()}
             />
           ) : (
             <span className="text-xs text-white/70 truncate font-medium flex-1">
-              {item.name || item.id}
+              {("name" in item && item.name) || item.id}
             </span>
           )}
         </div>

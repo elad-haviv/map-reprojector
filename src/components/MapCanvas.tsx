@@ -549,7 +549,7 @@ export const MapCanvas = forwardRef<MapCanvasHandle, MapCanvasProps>(({
         engine.scheduleRender();
         engine.report(false);
       })
-      .on("end", (event) => {
+      .on("end", () => {
         if (lasso) {
           const poly = lasso;
           lasso = null;

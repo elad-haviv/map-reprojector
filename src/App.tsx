@@ -97,7 +97,7 @@ function App() {
       const updateRecursive = (items: (VectorGroup | VectorFeature)[]) => {
         for (const item of items) {
           if (item.id === id) {
-            if (updates.name !== undefined) item.name = updates.name;
+            if (updates.name !== undefined && "name" in item) item.name = updates.name;
             if ("properties" in item) {
               item.properties = { ...item.properties, ...updates };
             }

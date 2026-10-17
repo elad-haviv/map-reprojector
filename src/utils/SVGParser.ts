@@ -84,7 +84,7 @@ export const parseSVGToGeometry = (svgString: string): VectorGeometry => {
               const [y] = getArgs(1); if (isRel) cur[1] += y; else cur[1] = y;
               currentSubpath.push(toLonLat(cur[0], cur[1]));
             } else if (type === 'C') {
-              const [x1, y1, x2, y2, x, y] = getArgs(6);
+              const [, , , , x, y] = getArgs(6);
               if (isRel) { cur[0] += x; cur[1] += y; } else { cur[0] = x; cur[1] = y; }
               currentSubpath.push(toLonLat(cur[0], cur[1]));
             } else if (type === 'Z') {
